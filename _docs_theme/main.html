@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block header %}
-<header class="md-header" data-md-component="header">
+<header data-md-component="header">
   <div class="masthead">
     <a href="{{ config.site_url }}.." class="masthead__logo">
       <svg xmlns="http://www.w3.org/2000/svg" width="254" height="30" viewBox="0 0 254 30" fill="none">
@@ -89,19 +89,29 @@
       {% endif %}
       
       <div class="masthead__cta"> <a href="https://wiremock.io/product?utm_source=wiremock.org&utm_medium=masthead&utm_campaign=homepage_2022_baseline" title="WireMock Cloud" class="btn t-6"> Go to WM Cloud </a> <span class="masthead__cta-note">Free forever. No credit card needed</span></div>
-      <button class="hamburgerMenuIcon"> <img id="hamburgerMenuIcon" src="{{ config.site_url }}/images/hamburgerMenuIcon.svg" /> </button>
-      <div id="overlay-menu" class="overlay-menu"></div>
-      <div class="mobile-menu-wrapper">
-        <img id="closeMenuIcon" class="closeMenuIcon" src="{{ config.site_url }}/images/closeMenuIcon.svg" />
-        <ul>
-          <li> <a href="https://wiremock.io?utm_source=wiremock.org&utm_medium=masthead&utm_campaign=homepage_2022_baseline" title="WireMock Cloud" class="btn t-5"> Go to WM Cloud </a></li>
-          <li> <a href="{{ config.site_url }}"> Docs </a></li>
-          <li> <a href="{{ config.site_url }}/resources/community-support"> Need Help? </a></li>
-          <li> <a href="{{ config.site_url }}/participate"> Participate </a></li>
-          <li> <a href="{{ config.site_url }}/resources/external"> Resources </a></li>
-        </ul>
-      </div>
     </nav>
+
+    <button class="hamburgerMenuIcon"> <img id="hamburgerMenuIcon" src="{{ config.site_url }}/images/hamburgerMenuIcon.svg" /> </button>
+    <div id="overlay-menu" class="overlay-menu"></div>
+    <div class="mobile-menu-wrapper">
+      <img id="closeMenuIcon" class="closeMenuIcon" src="{{ config.site_url }}/images/closeMenuIcon.svg" />
+      <ul>
+        <li> <a href="https://wiremock.io?utm_source=wiremock.org&utm_medium=masthead&utm_campaign=homepage_2022_baseline" title="WireMock Cloud" class="btn t-5"> Go to WM Cloud </a></li>
+        {% if "material/search" in config.plugins %}
+        <li>
+            <label class="md-header__button md-icon" for="__search">
+              {% set icon = config.theme.icon.search or "material/magnify" %}
+              {% include ".icons/" ~ icon ~ ".svg" %}
+            </label>
+            {% include "partials/search.html" %}
+        </li>
+        {% endif %}
+        <li> <a href="{{ config.site_url }}"> Docs </a></li>
+        <li> <a href="{{ config.site_url }}/resources/community-support"> Need Help? </a></li>
+        <li> <a href="{{ config.site_url }}/participate"> Participate </a></li>
+        <li> <a href="{{ config.site_url }}/resources/external"> Resources </a></li>
+      </ul>
+    </div>
   </div>
 </header>
 {% endblock %}

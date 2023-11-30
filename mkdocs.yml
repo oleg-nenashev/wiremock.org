@@ -85,6 +85,9 @@ extra_css:
   #- assets/css/main.css
   #- assets/css/main.css.map
 
+extra_javascript:
+  - assets/js/mobile-navbar.js
+
 plugins:
   - extra-sass
   - search
