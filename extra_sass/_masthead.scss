@@ -29,6 +29,28 @@ $masthead-link-color-hover: mix(#000, $gray, 25%);
     margin: 0 auto;
     max-width: 61rem;
   }
+
+  .md-search__input {
+    border: 1px solid #cacaca;
+    border-radius: 4px;
+    font-weight: 400;
+    font-size: .9rem;
+    padding: 7px 15px;
+    padding-left: 50px;
+    line-height: 22px;
+
+    &::placeholder {
+      color: grey;
+    }
+  }
+
+  .md-search__form {
+    background: none;
+
+    .md-search__icon svg {
+
+    }
+  }
 }
 
 .masthead__nav {
@@ -149,6 +171,18 @@ schedule-demo-nav-mobile {
     font-size: $type-size-4;
     color: $text-color;
     text-decoration: none;
+  }
+
+  .md-search {
+    padding: 0;
+  }
+
+  .md-search__inner {
+    position: static;
+    width: auto;
+    height: auto;
+    opacity: 1;
+    transform: unset;
   }
 }
 

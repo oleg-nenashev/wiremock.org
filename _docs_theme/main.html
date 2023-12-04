@@ -99,10 +99,6 @@
         <li> <a href="https://wiremock.io?utm_source=wiremock.org&utm_medium=masthead&utm_campaign=homepage_2022_baseline" title="WireMock Cloud" class="btn t-5"> Go to WM Cloud </a></li>
         {% if "material/search" in config.plugins %}
         <li>
-            <label class="md-header__button md-icon" for="__search">
-              {% set icon = config.theme.icon.search or "material/magnify" %}
-              {% include ".icons/" ~ icon ~ ".svg" %}
-            </label>
             {% include "partials/search.html" %}
         </li>
         {% endif %}
