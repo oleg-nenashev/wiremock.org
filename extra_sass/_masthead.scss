@@ -17,7 +17,7 @@ $masthead-link-color-hover: mix(#000, $gray, 25%);
   padding: 0.75rem 0;
   font-size: 16px;
   line-height: 24px;
-  font-family: "DMSans";
+  font-family: "DM Sans";
   width: 100vw;
   display: grid;
   grid-template-columns: 60% 1fr;
@@ -44,12 +44,12 @@ $masthead-link-color-hover: mix(#000, $gray, 25%);
     }
   }
 
+  .md-search__icon {
+    color: #0f0f0f;
+  }
+
   .md-search__form {
     background: none;
-
-    .md-search__icon svg {
-
-    }
   }
 }
 
@@ -174,6 +174,7 @@ schedule-demo-nav-mobile {
   }
 
   .md-search {
+    margin: 12px 0;
     padding: 0;
   }
 
@@ -298,7 +299,7 @@ schedule-demo-nav-mobile {
     margin: 0 0 5px 0;
     width: fit-content !important;
     height: 32px;
-    font-weight: 500;
+    font-weight: 400;
     color: $text-color;
   }
 }
